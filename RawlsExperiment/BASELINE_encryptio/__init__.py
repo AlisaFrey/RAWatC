@@ -14,9 +14,10 @@ Redristribution and Voting by Feet using a RET.
 Real-effort tasks. The different tasks are available in task_matrix.py, task_transcription.py, etc.
 You can delete the ones you don't need.
 
-THIS CONTAINS THE VALUES FROM THE 4. BASELINE SESSION.
+THIS CONTAINS THE VALUES FROM THE 3. BASELINE SESSION*.
 
-SESSION 04.07.2023 (INCOME_RANDOM 3) & 05.07.2023 (TAX_RANDOM 3)
+FOR CLER
+SESSION 11.07.2023 (BASELINE 5 and 6)
 """
 
 
@@ -47,7 +48,7 @@ class Constants(BaseConstants):
     timeout_seconds = 180
     starttime = time.time()
     # select the treatment from this list: ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM']  not (yet) included: 'PREFERENCES'
-    treatment = 'TAX_RANDOM'
+    treatment = 'BASE'
 
     B_instructions_template = __name__ + "/B/instructions_short_B.html"
     B_instructions_template_before = __name__ + "/B/instructions_before_B.html"
