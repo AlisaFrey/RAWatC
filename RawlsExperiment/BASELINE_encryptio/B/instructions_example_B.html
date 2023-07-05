@@ -1,0 +1,174 @@
+<div class="card">
+    <div class="card-body">
+        <!-- auskommentieren -->
+        <!-- <p>Instructions BEFORE go here.</p> -->
+ 
+        <div class="container">
+            <h3>Beispiel 1</h3>
+            <p>Angenommen drei Teilnehmende (A, D und E) haben sich für den gleichen Prozentsatz (hier {{low_percentage}}) entschieden:<br>
+            <small><small>(Jeder Teilnehmende erfährt die Anzahl der anderen Teilnehmenden, die den gleichen Prozentsatz gewählt haben, nach seiner Entscheidung)</small></small></p>            
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>TeilnehmenerIn A</th>
+                  <th>TeilnehmenerIn D</th>
+                  <th>TeilnehmenerIn E</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>erwirtschaftetes <br>Einkommen</td>
+                  <td>{{r_income}}</td>
+                  <td>{{r_other_income_D}}</td>
+                  <td>{{r_other_income_E}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Abzug durch <br>Prozentsatz {{low_percentage}}</td>
+                  <td>-{{subtraction_l}}</td>
+                  <td>-{{subtraction_other_l_D}}</td>
+                  <td>-{{subtraction_other_l_E}}</td>
+                  <td>Summe = {{sum_subtractions_l}}</thd>
+                </tr>
+                <tr>
+                  <td>direkte Vergütung <br>(nach Abzug)</td>
+                  <td>{{r_income_sub_l}}</td>
+                  <td>{{r_income_other_sub_l_D}}</td>
+                  <td>{{r_income_other_sub_l_E}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+                    <td>+{{ind_share_substractions_l}}</td>
+                    <td>+{{ind_share_substractions_l}}</td>
+                    <td>+{{ind_share_substractions_l}}</td>
+                    <td>{{sum_subtractions_l}} &#247; {{num_p}} = {{ind_share_substractions_l}}* </td>
+                </tr>
+                <tr>
+                    <td><b>finale Auszahlung <br> (Summe Vergütung)</b></td>
+                    <td><b>{{sum_round_l}}</b></td>
+                    <td><b>{{sum_round_l_D}}</b></td>
+                    <td><b>{{sum_round_l_E}}</b></td>
+                    <td></td>
+                    
+                  </tr>
+              </tbody>
+            </table>
+            <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+          </div>        
+      
+          
+          <div class="container">
+            <h3>Beispiel 2</h3>
+            <p>Angenommen drei Teilnehmende (A, D und E) haben sich für den gleichen Prozentsatz (hier {{high_percentage}}) entschieden:<br>
+            <small><small>(Jeder Teilnehmende erfährt die Anzahl der anderen Teilnehmenden, die den gleichen Prozentsatz gewählt haben, nach seiner Entscheidung)</small></small></p>            
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>TeilnehmenerIn A</th>
+                  <th>TeilnehmenerIn D</th>
+                  <th>TeilnehmenerIn E</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>erwirtschaftetes <br>Einkommen</td>
+                  <td>{{r_income}}</td>
+                  <td>{{r_other_income_D}}</td>
+                  <td>{{r_other_income_E}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Abzug durch <br>Prozentsatz {{high_percentage}}</td>
+                  <td>-{{subtraction_h}}</td>
+                  <td>-{{subtraction_other_h_D}}</td>
+                  <td>-{{subtraction_other_h_E}}</td>
+                  <td>Summe = {{sum_subtractions_h}}</thd>
+                </tr>
+                <tr>
+                  <td>direkte Vergütung <br>(nach Abzug)</td>
+                  <td>{{r_income_sub_h}}</td>
+                  <td>{{r_income_other_sub_h_D}}</td>
+                  <td>{{r_income_other_sub_h_E}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+                    <td>+{{ind_share_substractions_h}}</td>
+                    <td>+{{ind_share_substractions_h}}</td>
+                    <td>+{{ind_share_substractions_h}}</td>
+                    <td>{{sum_subtractions_h}} &#247; {{num_p}} = {{ind_share_substractions_h}}* </td>
+                </tr>
+                <tr>
+                    <td><b>finale Auszahlung <br> (Summe Vergütung)</b></td>
+                    <td><b>{{sum_round_h}}</b></td>
+                    <td><b>{{sum_round_h_D}}</b></td>
+                    <td><b>{{sum_round_h_E}}</b></td>
+                    <td></td>
+                    
+                  </tr>
+              </tbody>
+            </table>
+            <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+          </div>   
+<!--
+<p><big><b>Beispiel für den Ablauf einer Runde:</b></big></p>
+<ol> -->
+    <!--<li>--><!--low percentage--><!--
+        TeilnehmerIn A entscheidet sich für den Prozentsatz {{low_percentage}}
+    </li>
+    <li>
+        TeilnehmerIn A erwirtschaftet {{r_income}}
+    </li>
+    <li>
+        <br>
+        <ul>
+            <li>
+                Durch die Anwendung des Prozentsatzes werden TeilnehmerIn A {{subtraction_l}} der {{r_income}}  abgezogen, also verbleiben {{r_income_sub_l}}.
+            </li>
+            <li>
+                Was TeilnehmerIn A zu diesem Zeitpunkt nicht weiß: Auch TeilnehmerIn D und E haben sich für Prozentsatz {{low_percentage}} entschieden.
+                Von diesen beiden werden insgesamt {{subtraction_other_l}} abgezogen.
+                Die Summe aus den {{subtraction_l}} von TeilnehmerIn A und den {{subtraction_other_l}} von den TeilnehmerInnen D und E (insgesamt {{sum_subtractions_l}}) wird daraufhin zu gleichen Teilen unter den dreien verteilt
+            </li>
+        </ul>
+    </li>
+    <li>
+        TeilnehmerIn A erhählt Ihre Auszahlung von {{r_income}} - {{subtraction_l}} + {{ind_share_substractions_l}} = {{sum_round_l}}
+        und hat somit letztlich für diese Runde eine Auszahlung von {{sum_round_l}}n. 
+        TeilnehmerIn A erfährt, dass auch TeilnehmerInnen D und E den gleichen Prozentsatz gewählt hatten.
+    </li>
+</ol>
+
+<ol>-->
+    <!--<li>--><!--high percentage--><!--
+        TeilnehmerIn A entscheidet sich für den Prozentsatz {{high_percentage}}
+    </li>
+    <li>
+        TeilnehmerIn A erwirtschaftet {{r_income}}
+    </li>
+    <li>
+        <br>
+        <ul>
+            <li>
+                Durch die Anwendung des Prozentsatzes werden TeilnehmerIn A {{subtraction_h}} der {{r_income}}  abgezogen, also verbleiben {{r_income_sub_h}}.
+            </li>
+            <li>
+                Was TeilnehmerIn A zu diesem Zeitpunkt nicht weiß: Auch TeilnehmerIn D und E haben sich für Prozentsatz {{high_percentage}} entschieden.
+                Von diesen beiden werden insgesamt {{subtraction_other_h}} abgezogen.
+                Die Summe aus den {{subtraction_h}} von TeilnehmerIn A und den {{subtraction_other_h}} von den TeilnehmerInnen D und E (insgesamt {{sum_subtractions_h}}) wird daraufhin zu gleichen Teilen unter den dreien verteilt
+            </li>
+        </ul>
+    </li>
+    <li>
+        TeilnehmerIn A erhählt Ihre Auszahlung von {{r_income}} - {{subtraction_h}} + {{ind_share_substractions_h}} = {{sum_round_h}}
+        und hat somit letztlich für diese Runde eine Auszahlung von {{sum_round_h}}n. 
+        TeilnehmerIn A erfährt, dass auch TeilnehmerInnen D und E den gleichen Prozentsatz gewählt hatten.
+    </li>
+</ol>
+</div>
+</div>-->

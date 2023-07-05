@@ -1,0 +1,67 @@
+{{ block title }}
+    Start
+{{ endblock }}
+{{ block content }}
+
+
+<p>
+    Nun beginnt das eigentliche Experiment.
+</p>
+
+{{ if Constants.treatment == 'BASE'}}
+<p>Durch einen Klick auf "Weiter" gelangen Sie zur ersten Entscheidung für einen Prozentsatz:</p>
+{{ next_button }}
+<p></p>
+<p>Durch einen Klick auf "Zusammenfassung der Instruktionen" sehen Sie nochmals eine kurze Zusammenfassung des Ablaufs.</p>
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.B_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ if Constants.treatment == 'TAX_RANDOM'}}
+<p>Durch einen Klick auf "Weiter" erfahren Sie den ersten zugewiesenen Prozentsatz:</p>
+{{ next_button }}
+<p>Durch einen Klick auf "Zusammenfassung der Instruktionen" sehen Sie nochmals eine kurze Zusammenfassung des Ablaufs.
+</p>
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.TR_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+<p>Durch einen Klick auf "Weiter" gelangen Sie zur ersten Entscheidung für einen Prozentsatz:</p>
+{{ next_button }}
+<p>Durch einen Klick auf "Zusammenfassung der Instruktionen" sehen Sie nochmals eine kurze Zusammenfassung des Ablaufs.
+</p>
+
+<p></p>
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.IR_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+
+
+
+{{ endblock }}

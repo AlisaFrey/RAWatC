@@ -1,0 +1,115 @@
+{% load otree static %}
+
+{{ block title }}
+    Fragen
+{{ endblock }}
+{{ block content }}
+    <div class="container">
+    
+        <p>{{ if Constants.treatment == 'BASE' or Constants.treatment == 'INCOME_RANDOM'}}
+            Angenommen drei Teilnehmende (A, D und E) haben sich für den gleichen Prozentsatz (hier {{low_percentage}})
+            entschieden:
+            {{endif}}
+            {{ if Constants.treatment == 'TAX_RANDOM'}}
+            Angenommen drei Teilnehmende (A, D und E) haben zufällig den gleichen Prozentsatz (hier {{low_percentage}}) zugewiesen bekommen:
+            entschieden:
+            {{endif}}
+       </p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>TeilnehmenerIn A</th>
+                    <th>TeilnehmenerIn D</th>
+                    <th>TeilnehmenerIn E</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>erwirtschaftetes <br>Einkommen</td>
+                    <td>100</td>
+                    <td>400</td>
+                    <td>200</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Abzug durch <br>Prozentsatz {{low_percentage}}</td>
+                    <td>-15</td>
+                    <td>-60</td>
+                    <td>-30</td>
+                    <td>Summe = 105</thd>
+                </tr>
+                <tr>
+                    <td>direkte Vergütung <br>(nach Abzug)</td>
+                    <td>85</td>
+                    <td>340</td>
+                    <td>170</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>finale Auszahlung <br> (Summe Vergütung)</b></td>
+                    <td><b>120</b></td>
+                    <td><b>375</b></td>
+                    <td><b>205</b></td>
+                    <td></td>
+    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {{ if Constants.treatment == 'BASE'}} {{ formfield 'B_control7' label="Wie viel wird an jeden der drei Teilnehmenden ausgezahlt?" }} {{endif}}
+    {{ if Constants.treatment == 'TAX_RANDOM'}} {{ formfield 'TR_control7' label="Wie viel wird an jeden der drei Teilnehmenden ausgezahlt?" }} {{endif}}
+    {{ if Constants.treatment == 'INCOME_RANDOM'}} {{ formfield 'IR_control7' label="Wie viel wird an jeden der drei Teilnehmenden ausgezahlt?" }} {{endif}}
+
+    
+    {{ next_button }}
+{{ if Constants.treatment == 'BASE'}}
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.B_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ if Constants.treatment == 'TAX_RANDOM'}}
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.TR_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.IR_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+
+
+{{ endblock }}

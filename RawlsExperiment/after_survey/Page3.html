@@ -1,0 +1,32 @@
+{{ block title }}
+    Feedback
+{{ endblock }}
+{{ block content }}
+<p>Bitte geben Sie mit Hilfe der abgebildeten Skala an, inwiefern Sie der folgenden Aussage zustimmen.</p>
+
+<p></p>
+<p align="center"><b>Ganz gleich, wie viel Talent man hat, man kann es immer noch ein bisschen ändern.</b></p>
+<p></p>
+<p align="center">
+    <i>stimme überhaupt nicht zu</i> &nbsp;
+    {{ for choice in form.question_4 }}
+    {{ choice }}
+    {{ endfor }}
+    &nbsp; <i>stimme vollkommen zu</i>
+</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p align="center"><b>Man kann jederzeit die eigenen Talente wesentlich verändern.</b></p>
+<p></p>
+<p align="center">
+    <i>stimme überhaupt nicht zu</i> &nbsp;
+    {{ for choice in form.question_5 }}
+    {{ choice }}
+    {{ endfor }}
+    &nbsp; <i>stimme vollkommen zu</i>
+</p>
+    {{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %} {% load otree static %}
+
+{% block title %} Schätzen {% endblock %}
+
+{% block content %}
+
+<p>Sie können nun noch zusätzliche {{Constants.reward}}, das entspricht <b>{{ money }}</b>, verdienen.</p>
+<p>
+    Sie sind in einer Gruppe mit allen {{Constants.players_per_group}} Teilnehmenden des heutigen Experiments.<br>
+    Jede*r Teilnehmende gibt nun eine Zahl zwischen 0 und 100 an. Aus diesen Zahlen wird ein Durchschnitt gebildet. <br>
+    Die abgegebene Zahl, welche <b>2/3 des Durchschnitts aller abgegebenen Zahlen am nächsten </b> ist, gewinnt.<br>
+    Also nur eine Zahl (eine teilnehmende Person*) gewinnt die {{Constants.reward}}.
+</p>
+
+<p>Bitte geben Sie nun Ihre Schätzung ab (zwischen 0 und 100).</p>
+{% formfields %}
+
+{% next_button %}
+    <p><small><small>*Falls mehr als eine teilnehmende Person die beste Schätzung abgegeben haben, entscheidet das Los,
+                welche dieser Personen gewinnt.</small>
+
+{% endblock %}

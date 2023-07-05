@@ -1,0 +1,204 @@
+{{ block title }}
+    <button type="button" class="btn btn-outline-dark">
+      <font size="2"> <i>Runde {{ subsession.round_number }} von {{ Constants.num_rounds}} </i></font>
+    </button>
+    <h1>Ergebnis</h1>
+{{ endblock }}
+
+{{ block content }}
+{{ if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM'}}
+    <p>Sie haben <b>{{participant.num_correct}}
+  {{if Constants.treatment == 'INCOME_RANDOM'}} X{{participant.fake_num_correct}}X {{endif}}
+  Encryptio</b> korrekt gelöst und dabei <b>{{participant.income}} Einkommen</b> in der Aufgabe erwirtschaftet. </p>
+  <p>Nach Anwendung des Prozentsatzes beträgt Ihre <b>Auszahlung {{player.income_ar}}</b>.</p>
+{{endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+  <p>Sie haben <b>{{participant.fake_num_correct}} Encryptio</b> korrekt gelöst.<br>
+    Für Ihr Einkommen wurde Ihnen jedoch die Encryptio Zahl <b>{{participant.num_correct}}</b> zugelost.
+    Somit erhalten Sie <b>{{participant.income}} Einkommen</b>. </p>
+  <p>Nach Anwendung des Prozentsatzes beträgt Ihre <b>Auszahlung {{player.income_ar}}</b>.</p>
+{{endif}}
+  
+<p>{{if subsession.round_number == Constants.num_rounds}} Sie haben <b>{{correct}}</b> Fragen korrekt beantwortet. Sie erhalten
+    daher zusätzlich <b>{{belief_bonus}}</b>.{{endif}}</p>
+<p>{{if subsession.round_number == Constants.num_rounds}} Daher erhalten Sie insgesamt <b>{{player.payoff}}</b>.{{endif}}</p>
+<!--
+<p>Von den {{Constants.players_per_group}} Personen in Ihrer Gruppe 
+    {{if group.players_low != 1 }} haben {{endif}} {{if group.players_low == 1 }} hat {{endif}}
+    {{group.players_low}}
+    {{if group.players_low != 1 }} Personen {{endif}} {{if group.players_low == 1 }} Person {{endif}}
+    den niedrigen Prozentsatz {{low_percentage}}
+    {{if player.decision == 0}} ({{if group.players_low != 1 }}wie {{endif}}Sie) {{endif}}  gewählt
+    und {{group.players_high}} {{if group.players_high != 1}} Personen haben {{endif}}
+    {{if group.players_high == 1}} Person hat {{endif}} 
+    den hohen Prozentsatz {{high_percentage}}
+    {{if player.decision == 1}} ({{if group.players_high != 1 }}wie {{endif}}Sie) {{endif}} gewählt.
+</p>
+<p> Durch den gewählten Prozentsatz von 
+    {{if player.decision == 1}} {{high_percentage}} {{endif}} {{if player.decision == 0}} {{low_percentage}} {{endif}} 
+    wurden Ihnen  durch die Anwendung des Prozentsatzes von den {{player.income}} insgesamt
+    {{if player.decision == 1}} {{player.taxes_paid_high}} {{endif}} {{if player.decision == 0}} {{player.taxes_paid_low}} {{endif}}
+    abgezogen.
+    Danach bleiben {{player.income_at}} aus der direkten Vergütung der gelösten Encryptio.<br />
+    <-- Die Summe aller abgezogenen Vergütungen beträgt 
+    {{group.sum_taxes_low}} für den niedrigen Prozentsatz und {{group.sum_taxes_high}} für den hohen Prozentsatz.<br />-></p>
+    <p>   Durch die Anwendung des Protenzsatzes erhalten Sie dazu noch
+    {{if player.decision == 0}}{{group.sum_taxes_low}} {{endif}}
+                {{if player.decision == 1}}{{group.sum_taxes_high}}{{endif}}
+                &#247;
+                {{if player.decision == 1}} {{group.players_high}} {{endif}}
+                {{if player.decision == 0}}  {{group.players_low}} {{endif}}
+                =
+                {{if player.decision == 1}} {{player.redistribution_high}} {{endif}}
+                {{if player.decision == 0}} {{player.redistribution_low}} {{endif}}
+    <--{{if player.decision == 1}} {{player.redistribution_high}} {{endif}} {{if player.decision == 0}} {{player.redistribution_low}} {{endif}}->,
+    sodass Ihr Auszahlungsbetrag nach dieser Runde bei {{player.payoff}} liegt.
+</p>-->
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><h3>Übersicht</h3></th>
+      <th scope="col">{{low_percentage}}</th>
+      <th scope="col">{{high_percentage}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Anzahl Teilnehmende</th>
+      <td>{{group.players_low}}</td>
+      <td>{{group.players_high}}</td>
+    </tr>
+    {{ if Constants.treatment == 'INCOME_RANDOM'}}
+        <tr>
+          <th scope="row"> 
+            durchschnittlich gelöste Encryptio <br>(nicht relevant für Auszahlung))</th>
+          <td>
+            {{group.fake_puzzles_low}}
+          </td>
+          <td>
+            {{group.fake_puzzles_high}}
+          </td>
+        </tr>
+    {{endif}}
+    <tr>
+      <th scope="row"> {{ if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM'}} durchschnittlich gelöste Encryptio {{endif}}
+         {{ if Constants.treatment == 'INCOME_RANDOM'}} durchschnittlich zugeloste Encryptio Zahl{{endif}}</th>
+      <td>{{ if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM'}} {{group.puzzles_low}} {{endif}}
+        {{ if Constants.treatment == 'INCOME_RANDOM'}} {{group.puzzles_low}} {{endif}}
+      </td>
+      <td>{{ if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM'}} {{group.puzzles_high}} {{endif}}
+        {{ if Constants.treatment == 'INCOME_RANDOM'}} {{group.puzzles_high}} {{endif}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Summe der Abzüge durch den Prozentsatz</th>
+      <td>{{group.sum_taxes_low}}</td>
+      <td>{{group.sum_taxes_high}}</td>
+    </tr>
+    <tr>
+      <th scope="row">individuelle Auszahlung durch die Anwendung des Prozentsatzes</th>
+      <td>{{group.individual_share_low}}</td>
+      <td>{{group.individual_share_high}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<h3>Berechnung Ihrer Auszahlung</h3>
+{{if Constants.treatment == 'BASE'}}
+<p>Es haben sich insgesamt  <u>
+  {{if player.decision == 1}} {{group.players_high}} {{endif}}
+  {{if player.decision == 0}}  {{group.players_low}} {{endif}}</u>
+  Teilnehmende für den Prozentsatz <u>
+  {{if player.decision == 0}} {{low_percentage}} {{endif}}
+  {{if player.decision == 1}} {{high_percentage}} {{endif}}
+</u>
+  entschieden:<br>
+{{endif}}
+{{if Constants.treatment == 'TAX_RANDOM'}}
+<p>Es waren insgesamt <u>
+    {{if player.decision == 1}} {{group.players_high}} {{endif}}
+    {{if player.decision == 0}} {{group.players_low}} {{endif}}</u>
+  Teilnehmende mit dem Prozentsatz <u>
+    {{if player.decision == 0}} {{low_percentage}} {{endif}}
+    {{if player.decision == 1}} {{high_percentage}} {{endif}}
+  </u>
+  :<br>
+{{endif}}
+<div class="container">
+    <table class="table table-bordered">
+      <tbody>
+        {{if Constants.treatment == 'TAX_RANDOM' or Constants.treatment == 'BASE'}}
+        <tr>
+          <td>Ihre gelösten <br>Encryptio</td>
+          <td>{{player.num_correct}}</td>
+        </tr>
+        {{endif}}
+        {{if Constants.treatment == 'INCOME_RANDOM'}}
+          <tr>
+            <td>Zugeloste Encryptio <br> Zahl </td>
+            <td>{{player.num_correct}}</td>
+          </tr>
+        {{endif}}
+        <tr>
+          <td>Ihr {{if Constants.treatment == 'TAX_RANDOM' or Constants.treatment == 'BASE'}} erwirtschaftetes {{elif Constants.treatment == 'INCOME_RANDOM'}} erhaltenes {{endif}} <br>Einkommen</td>
+          <td>{{player.income}}</td>
+        </tr>
+        <tr>
+          <td>Ihr Abzug durch <br>Prozentsatz {{if player.decision == 0}} {{low_percentage}} {{endif}} {{if player.decision == 1}} {{high_percentage}} {{endif}}</td>
+          <td>{{if player.decision == 1}} {{player.taxes_paid_high}} {{endif}} {{if player.decision == 0}} {{player.taxes_paid_low}} {{endif}}</td>
+        </tr>
+        <tr>
+          <td>Ihre direkte Vergütung <br>(nach Abzug)</td>
+          <td>{{player.income_at}}</td>
+        </tr>
+        <tr>
+            
+            <td> Summe aller Abzüge =
+                {{if player.decision == 0}}{{group.sum_taxes_low}} {{endif}}
+                {{if player.decision == 1}}{{group.sum_taxes_high}}{{endif}};<br>
+                {{if player.decision == 0}}{{group.sum_taxes_low}} {{endif}}
+                {{if player.decision == 1}}{{group.sum_taxes_high}}{{endif}}
+                &#247;
+                {{if player.decision == 1}} {{group.players_high}} {{endif}}
+                {{if player.decision == 0}}  {{group.players_low}} {{endif}}
+                =
+                {{if player.decision == 1}} {{player.redistribution_high}} {{endif}}
+                {{if player.decision == 0}} {{player.redistribution_low}} {{endif}}*
+
+            </td>
+            <td></td>
+          </tr>
+
+        <tr>
+            <td>Ihre indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+            <td>{{if player.decision == 1}} {{player.redistribution_high}} {{endif}} {{if player.decision == 0}} {{player.redistribution_low}} {{endif}}</td>
+        </tr>
+        <tr>
+            <td><b>Ihre finale Auszahlung <br> (Summe Vergütung)</b></td>
+            <td><b>{{player.income_ar}}</b></td>
+          </tr>
+      </tbody>
+    </table>
+    <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+  </div>    
+
+<!--
+<p>  
+    Die Rechnung ist folgendermaßen: <br />
+    {{participant.num_correct}} &sdot; {{Constants.MULTIPLICATOR}} = {{player.income}} (Ihr erwirtschaftetes Einkommen aus den Encryptio) <br />
+    {{player.income}} 	&minus; ({{if player.decision == 1}} {{Constants.HIGH_RATE}} {{endif}} {{if player.decision == 0}} {{Constants.LOW_RATE}} {{endif}} &sdot;  {{player.income}}) = {{player.income_at}}
+    (verbleibend aus dem Einkommen der gelösten Encryptio &rarr; direkte Vergütung)<br />
+    {{if player.decision == 0}} {{group.sum_taxes_low}} &divide; {{group.players_low}} = {{group.individual_share_low}} (einheitliche Auszahlung durch die Anwendung des Prozentsatzes)<br />{{endif}}
+    {{if player.decision == 1}} {{group.sum_taxes_high}} &divide; {{group.players_high}} = {{group.individual_share_high}} (einheitliche Auszahlung durch die Anwendung des Prozentsatzes &rarr; indirekte Vergütung )<br />{{endif}}
+    {{player.income_at}} + {{if player.decision == 0}}{{group.individual_share_low}} {{endif}}{{if player.decision == 1}}{{group.individual_share_high}}{{endif}} = {{player.payoff}} (Ihr Auszahlungsbetrag dieser Runde &rarr; direkte Vergütung + indirekte Vergütung )<br />
+    
+</p>
+-->
+
+
+    {{ next_button }}
+{{ endblock }}
+
+

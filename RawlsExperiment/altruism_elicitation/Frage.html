@@ -1,0 +1,22 @@
+{{ block title }}
+    Frage
+{{ endblock }}
+{{ block content }}
+
+<p> Wir fragen Sie nun nach Ihrer Bereitschaft sich in einer bestimmten Art zu verhalten.</p>
+<p>Bitte verwenden Sie für Ihre Antwort die abgebildete Skala.</p> 
+
+<p></p>
+<p align="center"><b>Wie sehr wären Sie bereit, für einen guten Zweck zu geben, ohne etwas als Gegenleistung zu erwarten?</b></p>
+<p></p>
+<p align="center">
+    <i>überhaupt nicht bereit, dies zu tun</i> &nbsp;
+    {{ for choice in form.WP13421 }}
+    {{ choice }}
+    {{ endfor }}
+    &nbsp; <i>sehr bereit, dies zu tun</i>
+</p>
+
+    {{ next_button }}
+
+{{ endblock }}

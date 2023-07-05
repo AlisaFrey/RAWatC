@@ -1,0 +1,29 @@
+{{ block title }}
+Willkommen
+{{ endblock }}
+
+{{ block content }}
+<p>Schön, dass Sie bei unserem heutigen Experiment teilnehmen.</p>
+<p>Bitte lesen Sie die nachfolgenden Instruktionen für den Ablauf des Experiments aufmerksam durch.
+    Bei Fragen jeglicher Art, können Sie sich gerne an die ExperimentatorInnen wenden.</p>
+    <p>Bitte sprechen Sie nicht mit ihren Nachbarinnen oder Nachbarn und seien Sie während des gesamten Experiments ruhig.
+            Wenn Sie eine Frage haben, heben Sie bitte Ihre Hand. Wir werden dann zu Ihnen an den Platz kommen und Ihnen Ihre Frage persönlich beantworten.</p>
+        </p>
+
+{{if Constants.treatment == 'BASE'}}
+    {{ include Constants.B_instructions_template_before }}
+ <!--   {{ include Constants.B_instructions_template_example }} -->
+{{ endif }}
+{{if Constants.treatment == 'TAX_RANDOM'}}
+{{ include Constants.TR_instructions_template_before }}
+    
+{{ endif }}
+{{if Constants.treatment == 'INCOME_RANDOM'}}
+{{ include Constants.IR_instructions_template_before }}
+{{ endif }}
+<p>Im Anschluss an das eigentliche Experiment folgen noch einige Fragen bei denen Sie zusätzlich Geld verdienen können.</p>
+<p>Durch einen Klick auf "Weiter" sehen Sie Beispiele für die Anwendung des Prozentsatzes.</p>
+    {{ next_button }}
+{{ endblock }}
+
+

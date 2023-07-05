@@ -1,0 +1,51 @@
+{% load otree static %}
+
+{{ block title }}
+    Fragen
+{{ endblock }}
+{{ block content }}
+
+        {{ formfields }}
+
+    
+    {{ next_button }}
+{{ if Constants.treatment == 'BASE'}}
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.B_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ if Constants.treatment == 'TAX_RANDOM'}}
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.TR_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ include Constants.IR_instructions_template_short }}
+    </div>
+</div>
+{{ endif}}
+{{ endblock }}

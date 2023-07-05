@@ -1,0 +1,123 @@
+<div class="card">
+    <div class="card-body">
+        <!-- auskommentieren -->
+        <!-- <p>Instructions BEFORE go here.</p> -->
+        <!--<p>Willkommen zu unserem Experiment.</p>
+        <p>Bitte lesen Sie diese Instruktionen sorgfältig durch.
+            Bitte sprechen Sie nicht mit ihren Nachbarinnen oder Nachbarn und seien Sie während des gesamten Experiments ruhig.
+            Wenn Sie eine Frage haben, heben Sie bitte Ihre Hand. Wir werden dann zu Ihnen an den Platz kommen und Ihnen Ihre Frage persönlich beantworten.</p>
+        -->
+        <p>In diesem Experiment können Sie durch Ihre Entscheidungen und Ihren persönlichen Einsatz Geld verdienen.
+            Wie viel Sie verdienen, hängt von Ihren Entscheidungen (bzw. Ihrem Einsatz) und von den Entscheidungen und
+            dem Einsatz von anderen Ihnen zufällig zugewiesenen Teilnehmerinnen und Teilnehmern, ab.
+            Am Ende des Experiments bekommen Sie auf jeden Fall Ihren Gewinn ausgezahlt.</p>
+
+        <p> Alle Teilnehmenden erhalten (und lesen gerade) die gleichen Instruktionen.</p>
+        <p>Sie bleiben für uns und für die anderen Teilnehmenden vollkommen anonym. Wir speichern keine Daten in
+            Zusammenhang mit Ihrem Namen.</p>
+        <br>
+        <p><big><big><b>Das Experiment</b></big></big></p>
+        <br>
+        <p>Das Experiment besteht aus drei Phasen:</p>
+        <ul>
+            <li> Wahl des Prozentsatzes</li>
+            <li> Einsatz und Einkommen </li>
+            <li>Anwendung des Prozentsatzes</li>
+            <!-- <li> Modus </li> -->
+        </ul>
+        <p>Alle Phasen werden insgesamt {{Constants.num_rounds}} Mal wiederholt, das Experiment besteht also aus
+            {{Constants.num_rounds}} Runden.</p>
+        <br>
+        <p><b>1. Phase</b></p>
+        <p>Sie und auch alle anderen Teilnehmenden wählen individuell zwischen zwei angebotenen Prozentsätzen.
+            Sie wählen entweder {{low_percentage}} oder {{high_percentage}}. Diese Wahl ist für alle gleich.<br>
+            Sie erfahren anschließend die Anzahl anderer Teilnehmenden mit dem gleichen Prozentsatz.
+        </p>
+        <br>
+        <p><b>2. Phase</b></p>
+        <p>Einkommen wird erwirtschaftet. Die konkreten Instruktionen zu dieser Phase erhalten Sie nach Abschluss der 1.
+            Phase.</p>
+        <br>
+        <p><b>3. Phase</b></p>
+        <p>Der Prozentsatz wird angewendet und bestimmt somit Ihre Auszahlung. Die exakte Wirkung wird nachfolgend
+            erläutert.</p>
+        <!--<p>Der Modus wirkt und bestimmt somit Ihre Auszahlung. Dieser exakte Modus wird nachfolgend erläutert.</p>-->
+        <br>
+        <p>Anschließend erhalten Sie die Informationen, wie viel in dieser Runde erwirtschaftet wurde und welche
+            Auszahlung Sie für die abgeschlossene Runde bekommen.<br>
+        </p>
+        <p>Ihre finale Auszahlung für das Experiment entspricht der Summe Ihrer Auszahlungen in den einzelnen
+            Runden.<br>
+            Ihr Einkommen sowie Ihre Auszahlung werden während des Experiments in Punkten notiert.
+            Ihre finale Auszahlung erhalten Sie nach Beendigung des Experiments in Euro.
+            Dabei entsprechen {{point_euro}} einem Euro oder anders ausgedrückt:<br>
+            <center>1 Punkt = {{session.real_world_currency_per_point}} Euro.</center>
+        </p>
+        <br>
+        <p><big><b>Gruppen und Anwendung des Prozentsatzes</b></big></p>
+        <p>Sie werden vor Start des eigentlichen Experiments zufällig einer Gruppe aus insgesamt
+            {{Constants.players_per_group}} Teilnehmenden zugeteilt.
+            Diese Gruppen bleiben über den gesamten Ablauf gleich.</p>
+        <p>Ihre Auszahlung hängt von Ihren Entscheidungen und Ihrem Einsatz sowie von Entscheidungen und Einsatz der
+            anderen Teilnehmenden in Ihrer Gruppe ab.</p>
+
+        <p><!--Ihre Auszahlung in einer Runde wird durch den Modus bestimmt.-->
+            Ihre Auszahlung in einer Runde wird durch den Prozentsatz mitbestimmt.
+            Dies läuft folgendermaßen ab:<br>
+        <ol>
+            <li>Einkommen wird erwirtschaftet.<!--Durch Ihren Einsatz erwirtschaften Sie ein Einkommen.--></li>
+            <!--<li>Der Modus zieht Ihnen zunächst einen Teil (entsprechend Ihres zuvor gewählten Prozentsatzes) von Ihrem Einkommen ab.</li>-->
+            <li>Die Anwendung des Prozentsatzes zieht Ihnen zunächst einen Teil (entsprechend Ihres zuvor gewählten
+                Prozentsatzes) von Ihrem Einkommen ab.</li>
+            <li>Dieser Teil wird mit den Teilen jener Teilnehmenden, die <u>den gleichen Prozentsatz wie Sie</u> gewählt
+                haben, zusammengeführt.</li>
+            <li>Anschließend erhalten Sie sowie die anderen Teilnehmenden, die <u>den gleichen Prozentsatz wie Sie</u>
+                gewählt haben, dieses zunächst abgezogene Einkommen jeweils zu gleichen Teilen wieder ausgezahlt.</li>
+
+        </ol>
+        <!-- Durch Ihren Einsatz erwirtschaften Sie ein Einkommen.
+        Der Modus zieht Ihnen zunächst einen Teil (entsprechend Ihres zuvor gewählten Prozentsatzes) von Ihrem Einkommen ab.
+        Dieser Teil wird mit den Teilen jener Teilnehmenden, die den gleichen Prozentsatz wie Sie gewählt haben zusammengeführt.
+        Anschließend erhalten Sie sowie die anderen Teilnehmenden dieses zunächst abgezogene Einkommen jeweils zu gleichen Teilen wieder ausgezahlt.<br>
+        Der Modus wird durch nachfolgendes Bild beispielhaft illustriert:-->
+        </p>
+        <p><!--Der Modus wird durch nachfolgendes Bild beispielhaft illustriert:-->
+            Die Anwendung des Prozentsatzes wird durch nachfolgendes Bild beispielhaft illustriert:</p>
+        <p><small><small>(Teilnehmende A, B & C sowie D, E, & F haben jeweils den gleichen Prozentsatz gewählt - die
+                    Anzahl an Teilnehmenden je Prozentsatz ist vor dem Einsatz bekannt.) </small></small></p>
+        <br>
+
+        <!--<img src="{% static 'all_in_one/Grafik1a2.jpg' %}"/>-->
+        <img src="{% static 'all_in_one/Grafik_new2.jpg' %}" />
+        <br> <br> <br>
+        <!-- <p> Dabei erfahren Sie erst, nachdem Sie Ihr Einkommen erwirtschaftet haben, wie viele andere Teilnehmenden Ihrer Gruppe den gleichen Prozentsatz gewählt haben.</p> -->
+        <p><!--Der Modus wirkt unabhängig davon, wie viele Teilnehmenden den gleichen Prozentsatz gewählt haben. -->
+            Die Anwendung des Prozentsatzes erfolgt unabhängig davon, wie viele Teilnehmenden den gleichen Prozentsatz
+            gewählt haben.
+            Falls keine anderen Teilnehmenden den gleichen Prozentsatz wie Sie gewählt haben, erhalten Sie Ihr zunächst
+            abgezogenes Einkommen wieder ausgezahlt.</p>
+        <br>
+        <p><big><b>Zusammenfassung des Ablaufs</b></big></p>
+
+        <ol>
+            <li> <b>Prozentsatz.</b> Sie entscheiden sich für einen der zwei angebotenen Prozentsätze. </li>
+            <li> <b>Einsatz. </b> Einkommen wird erwirtschaftet (näheres dazu folgt separat).</li>
+            <!--<li> <b>Modus.</b> Der Modus wirkt </li>-->
+            <li><b>Anwendung.</b> Der Prozentsatz wird angewendet, wodurch Ihre Auszahlung für diese Runde bestimmt
+                wird.</li>
+            <ol>
+                <!--<li>Der Modus zieht Ihnen entsprechend des gewählten Prozentsatzes einen Teil Ihres erwirtschafteten Einkommens ab.</li>-->
+                <li> Durch die Anwendung des Prozentsatzes wird Ihnen entsprechend des gewählten Prozentsatzes ein Teil
+                    Ihres erwirtschafteten Einkommens abgezogen.</li>
+                <li>Der abgezogene Teil Ihres Einkommens sowie die Teile aller anderen Gruppenmitglieder, die den
+                    gleichen Prozentsatz gewählt haben, werden aufsummiert.</li>
+                <!--<li>Durch den Modus wird diese Summe zu gleichen Teilen an die gleichen Teilnehmenden ausgezahlt.</li>-->
+                <li>Durch die Anwendung des Prozentsatzes wird diese Summe zu gleichen Teilen an die gleichen
+                    Teilnehmenden ausgezahlt.</li>
+            </ol>
+            <li><b>Feedback.</b> Sie erhalten Feedback zu Ihrem erwirtschafteten Einkommen und Ihrer Auszahlung in
+                dieser Runde.</li>
+        </ol>
+
+    </div>
+</div>

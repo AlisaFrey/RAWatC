@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Vielen Dank
+{% endblock %}
+
+{% block content %}
+
+    <p>Die folgenden Daten wurden übernommen:</p>
+    
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th>E-Mail-Adresse auf PayPal</th><td>{{ emailEntered }}</td>
+            </tr>
+            <tr>
+                <th>Auszahlungsbetrag</th><td>{{ nicePayment }} €</td>
+            </tr>
+        </table>
+    </div>
+    
+    <p><i>Wenn diese Angaben Ihrer Meinung nach fehlerhaft sind, müssen Sie <b>jetzt</b> das Labor kontaktieren und dabei den Code <tt>{{ participant.code }}</tt> angeben: <a href="mailto:experiment@lab.uni-koeln.de?subject=Auszahlung%20{{ participant.code }}">experiment@lab.uni-koeln.de</a>.</i></p>
+    
+    <p>Wenn Sie keine weiteren Anweisungen haben, ist das Experiment nun abgeschlossen. Sie können nun den Browser schließen.</p>
+
+    <p>Die Zahlung erfolgt innerhalb von drei Werktagen. Bitte kontaktieren Sie das Labor erst nach Ablauf dieser Frist. Bitte geben Sie bei Ihren Nachrichten an uns stets den Code <tt>{{ participant.code }}</tt> an. Ohne diesen Code ist eine Bearbeitung Ihrer Anfrage nicht möglich.</p>
+
+    <p>Die Verwendung dieses Auszahlungsformular stellt sicher, dass Ihre Verhaltensdaten nicht mit Ihren Auszahlungsdaten verknüpft werden können. Wir danken Ihnen für Ihr Verständnis. <a href="https://gitlab.com/cler1/AnonPay" target="_new">Erfahren Sie mehr über dieses Auszahlungsformular.</a></p>
+    
+    <p><b>Wenn Sie möchten, können Sie uns Feedback zu dem heutigen Experiment geben.</b> Bitte stellen Sie sicher, dass Sie in dieses Feld keine personenbezogenen Daten eingeben.</p>
+    
+    {% formfield player.feedback label="" %}
+    
+    {% next_button %}
+    
+{% endblock %}

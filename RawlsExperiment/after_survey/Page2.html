@@ -1,0 +1,20 @@
+{{ block title }}
+    Feedback
+{{ endblock }}
+{{ block content }}
+<p>Bitte geben Sie mit Hilfe der abgebildeten Skala an, inwiefern Sie der folgenden Aussage zustimmen.</p>
+
+<p></p>
+<p align="center"><b>Ich finde es fair, wenn Talent die Einkommensungleichheit bestimmt.</b></p>
+<p></p>
+<p align="center">
+    <i>stimme überhaupt nicht zu</i> &nbsp;
+    {{ for choice in form.question_2 }}
+    {{ choice }}
+    {{ endfor }}
+    &nbsp; <i>stimme vollkommen zu</i>
+</p>
+
+    {{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,53 @@
+{% block styles  %}
+    <link href="{% static 'real_effort.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{{ block title }}
+Encryptio
+<!-- Das ist ein Kommentar -->
+{{ endblock }}
+
+{{ block content }}
+<div class="d-flex flex-column align-items-center">
+    <h3>
+       <!-- Iteration <span id="iter-txt"></span> -->
+    </h3>
+    <p>
+    <!-- new added: -->
+    Bitte übertragen Sie die abgebildete Ziffernfolge mit Hilfe der Tabelle in die zugehörige Buchstabenkombination.
+    </p>
+    <!-- <p>Solved: <span id="solved-txt"></span>. Failed: <span id="failed-txt"></span>.</p> -->
+    <img class="captcha m-1" id="captcha-img">
+
+    <div class="input-group m-1">
+        <input type="{{ input_type }}" id="answer-inp" class="form-control"
+               placeholder="{{ placeholder }}"
+               autocorrect="off" autocapitalize="off" spellcheck="false">
+        <button type="button" id="submit-btn" class="btn btn-outline-secondary">Senden</button>
+        <!-- Senden statt Submit -->
+    </div>
+
+    <p class="warn" id="warning-txt"></p>
+
+ <!--   {{ if DEBUG }}
+    <button type="button" id="cheat-btn" class="btn btn-dark">Cheat</button>
+    {{ endif }}-->
+</div>
+<br>
+<p><b>Wiederholung der Instruktionen für die Encryptio:</b></p>
+{{ if Constants.treatment == 'BASE'}}
+{{ include Constants.B_instructions_template_game_short }}<br>
+{{ endif}}
+{{ if Constants.treatment == 'TAX_RANDOM'}}
+{{ include Constants.TR_instructions_template_game_short }}<br>
+{{ endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+{{ include Constants.IR_instructions_template_game_short }}<br>
+{{ endif}}
+
+{{ endblock }}
+
+{{ block scripts }}
+<script src="{{ static 'real_effort.js' }}"></script>
+{{ if DEBUG }}<script src="{{ static 'real_effort_cheating.js' }}"></script>{{ endif }}
+{{ endblock }}

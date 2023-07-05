@@ -1,0 +1,44 @@
+{{ block title }}
+Beispiele
+{{ endblock }}
+
+{{ block content }}
+<p>Nachfolgend sehen Sie vier Beispiele für die Anwendung des Prozentsatzes.</p><p>
+Nach den Beispielen finden Sie nochmals die ausführlichen Instruktionen, falls Sie nochmal nachlesen möchten.
+</p>
+<p><br>
+<br></p>
+{{if Constants.treatment == 'BASE'}}
+    
+    {{ include Constants.B_instructions_template_example }}
+    <p>Es folgen nun ein paar kurze Verständnisfragen zum Ablauf des Experiments.<br>
+        Bitte klicken Sie dafür auf "Weiter".</p>
+    {{ next_button }}
+    <h2>WIEDERHOLUNG DER INSTRUKTIONEN</h2>
+    {{ include Constants.B_instructions_template_before }}
+{{ endif }}
+{{if Constants.treatment == 'TAX_RANDOM'}}
+
+{{ include Constants.TR_instructions_template_example }}
+<p>Es folgen nun ein paar kurze Verständnisfragen zum Ablauf des Experiments.<br>
+    Bitte klicken Sie dafür auf "Weiter".</p>
+{{ next_button }}
+<h2>WIEDERHOLUNG DER INSTRUKTIONEN</h2>
+{{ include Constants.TR_instructions_template_before }}
+{{ endif }}
+{{if Constants.treatment == 'INCOME_RANDOM'}}
+
+{{ include Constants.IR_instructions_template_example }}
+<p>Es folgen nun ein paar kurze Verständnisfragen zum Ablauf des Experiments.<br>
+    Bitte klicken Sie dafür auf "Weiter".</p>
+{{ next_button }}
+<h2>WIEDERHOLUNG DER INSTRUKTIONEN</h2>
+{{ include Constants.IR_instructions_template_before }}
+{{ endif }}
+
+<p>Es folgen nun ein paar kurze Verständnisfragen zum Ablauf des Experiments.<br>
+Bitte klicken Sie dafür auf "Weiter".</p>
+    {{ next_button }}
+{{ endblock }}
+
+

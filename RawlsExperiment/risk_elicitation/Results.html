@@ -1,0 +1,10 @@
+{{ block title }}
+Ihr Investment war {{if player.resultat == 0 }} nicht {{endif}} erfolgreich.
+{{ endblock }}
+
+{{ block content }}
+<p> Sie hatten sich für ein Investment von {{player.investment}} entschieden. Sie erhalten daher insgesamt {{player.payoff}} zusätzlich zu Ihrem bisherigen Verdienst aus dem Experiment.</p>
+    {{ next_button }}
+{{ endblock }}
+
+

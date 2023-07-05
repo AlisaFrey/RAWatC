@@ -1,0 +1,25 @@
+{% load otree static %}
+
+{{ block title }}
+    Fragen
+{{ endblock }}
+{{ block content }}
+
+        {{ formfields }}
+
+    
+    {{ next_button }}
+
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Zusammenfassung der Instruktionen
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Wiederholung des Ablaufs:<br>{{ include Constants.B_instructions_template }}
+    </div>
+</div>
+
+{{ endblock }}

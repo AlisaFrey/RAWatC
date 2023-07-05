@@ -1,0 +1,15 @@
+{{ block title }}
+    Fragen
+{{ endblock }}
+{{ block content }}
+
+<p>Wir stellen Ihnen nun zwei kurze Fragen, in denen wir Sie um Ihre Einschätzung zur Anzahl gelöster Encryptio bitten.</p>
+<p>Wenn Ihre Schätzung richtig ist, erhalten Sie für jede korrekte Antwort {{ Constants.belief_bonus }}.</p>
+<p>Wenn Ihre Antwort nicht weiter als 1 vom wahren Wert abweicht, werten wir Ihre Antwort als richtig. <br>
+
+    Bei einem wahren Wert von z.B. 1000 werden die Schätzungen zwischen 999 & 1001 als richtig gewertet.
+</p>
+<p>Durch einen Klick auf 'Weiter' gelangen Sie zur ersten Frage:</p>
+
+{{ next_button }}
+{{ endblock }}

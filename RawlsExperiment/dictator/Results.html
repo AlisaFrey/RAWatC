@@ -1,0 +1,29 @@
+{{ block title }}Ergebnis{{ endblock }}
+{{ block content }}
+{{if group.id_in_subsession == group.group_selected}}
+<p>
+    
+</p>
+<p>
+    {{ if player.id_in_group == 1 }}
+    Sie erhalten eine Auszahlung. <br>
+    Ihre Entscheidung wurde ausgewählt.<br>
+    Sie haben sich entschieden <strong>{{ group.kept }}</strong> zu behalten.
+    {{ else }}
+    Sie erhalten den Rest. <br>
+    Die andere Person hat entschieden <strong>{{ group.kept }}</strong> zu behalten. Somit
+    bekommen Sie <strong>{{ offer }}</strong>.
+    {{ endif }}
+</p>
+{{ endif }}
+{{if group.id_in_subsession != group.group_selected}}
+<p>
+    Ihre Auszahlung wurde <u>nicht</u> ausgewählt. Sie erhalten keine Auszahlung.
+</p>
+
+{{ endif }}
+
+    {{ next_button }}
+
+
+{{ endblock }}

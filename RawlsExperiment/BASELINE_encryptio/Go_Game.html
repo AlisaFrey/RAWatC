@@ -1,0 +1,94 @@
+{{ block title }}
+    <button type="button" class="btn btn-outline-dark">
+        <font size="2"> <i>Runde {{ subsession.round_number }} von {{ Constants.num_rounds}} </i></font>
+    </button>
+<h1>Encryptio</h1>
+{{ endblock }}
+
+{{ block content }}
+{{if Constants.treatment == 'BASE'}}
+<p>Sie haben sich für den Prozentsatz 
+   <b>{{if player.decision == 0}} {{low_percentage}} {{endif}}
+    {{if player.decision == 1}} {{high_percentage}} {{endif}} </b>
+    entschieden.
+</p>
+{{endif}}
+{{if Constants.treatment == 'BASE'}}
+<p>Es haben sich insgesamt <b>
+    {{if player.decision == 1}} {{group.players_high}} {{endif}}
+    {{if player.decision == 0}} {{group.players_low}} {{endif}}</b>
+Teilnehmende für den Prozentsatz <b>
+    {{if player.decision == 0}} {{low_percentage}} {{endif}}
+    {{if player.decision == 1}} {{high_percentage}} {{endif}}
+</b>
+entschieden:<br></p>
+{{endif}}
+
+{{if Constants.treatment == 'INCOME_RANDOM'}}
+<p>Sie haben sich für den Prozentsatz
+    <b>{{if player.decision == 0}} {{low_percentage}} {{endif}}
+        {{if player.decision == 1}} {{high_percentage}} {{endif}} </b>
+    entschieden.
+</p>
+{{endif}}
+{{if Constants.treatment == 'INCOME_RANDOM'}}
+<p>Es haben sich insgesamt <b>
+        {{if player.decision == 1}} {{group.players_high}} {{endif}}
+        {{if player.decision == 0}} {{group.players_low}} {{endif}}</b>
+    Teilnehmende für den Prozentsatz <b>
+        {{if player.decision == 0}} {{low_percentage}} {{endif}}
+        {{if player.decision == 1}} {{high_percentage}} {{endif}}
+    </b>
+    entschieden:<br></p>
+{{endif}}
+
+{{if Constants.treatment == 'TAX_RANDOM'}}
+<p>Sie haben den Prozentsatz
+    <b>{{if player.decision == 0}} {{low_percentage}} {{endif}}
+        {{if player.decision == 1}} {{high_percentage}} {{endif}} </b>
+    zufällig zugewiesen bekommen.
+</p>
+{{endif}}
+{{if Constants.treatment == 'TAX_RANDOM'}}
+<p>Insgesamt 
+    <b>
+        {{if player.decision == 1}} {{group.players_high}} {{endif}}
+         {{if player.decision == 0}} {{group.players_low}} {{endif}}
+    </b>
+     Teilnehmende haben in dieser Runde ebenfells den Prozentsatz
+    <b>
+        {{if player.decision == 0}} {{low_percentage}} {{endif}}
+        {{if player.decision == 1}} {{high_percentage}} {{endif}}
+    </b>
+    zufällig zugewiesen bekommen.
+</p>
+{{endif}}
+<p>Bitte drücken Sie auf "Weiter", um mit den Encryptio zu starten. Es geht dann sofort los!</p>
+
+{{ next_button }}
+<br>
+
+<p>
+    <a class="btn btn-light btn-lg btn-block active" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Wiederholung der Instruktionen für die Encryptio:
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        {{ if Constants.treatment == 'BASE'}}
+        {{ include Constants.B_instructions_template_game_short }}<br>
+        {{ endif}}
+        {{ if Constants.treatment == 'TAX_RANDOM'}}
+        {{ include Constants.TR_instructions_template_game_short }}<br>
+        {{ endif}}
+        {{ if Constants.treatment == 'INCOME_RANDOM'}}
+        {{ include Constants.IR_instructions_template_game_short }}<br>
+        {{ endif}}
+    </div>
+</div>
+
+ 
+{{ endblock }}
+
+

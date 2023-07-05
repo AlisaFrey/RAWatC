@@ -1,0 +1,378 @@
+
+<h3 align="center">Beispiel 1</h3>
+<p>Ihr erwirtschaftetes Einkommen beträgt {{r_income}}:<br>
+
+</p>
+<p>Insgesamt {{new_num_low}} Teilnehmende haben {{low_percentage}} gewählt und {{new_num_high}} haben {{high_percentage}} gewählt.</p>
+<p><b><i>Angenommen Sie haben den Prozentsatz <u>{{low_percentage}}.</u></i></b></p>
+<p> Sie sehen die folgende Übersicht zu den beiden Prozentsätzen und deren Anwendung:<br> <small><small>(Jeder Teilnehmende erfährt die Anzahl der anderen Teilnehmenden, die den gleichen Prozentsatz
+    gewählt
+    haben, nach seiner Entscheidung)</small></small></p>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><h3>Übersicht</h3></th>
+      <th scope="col">{{low_percentage}}</th>
+      <th scope="col">{{high_percentage}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Anzahl Teilnehmende</th>
+      <td>{{new_num_low}}</td>
+      <td>{{new_num_high}}</td>
+    </tr>
+            <tr>
+              <th scope="row">durchschnittliches Einkommen</th>
+              <td>{{new_average_income_l_1}}</td>
+              <td>{{new_average_income_h_1}}</td>
+            </tr>
+    <tr>
+      <th scope="row">Summe der Abzüge durch den Prozentsatz</th>
+      <td>{{new_sum_subtractions_l_1}}</td>
+      <td>{{new_sum_subtractions_h_1}}</td>
+    </tr>
+    <tr>
+      <th scope="row">individuelle Auszahlung durch die Anwendung des Prozentsatzes</th>
+      <td>{{new_ind_share_substractions_l_1}}</td>
+      <td>{{new_ind_share_substractions_h_1}}</td>
+    </tr>
+  </tbody>
+</table>
+<p> In diesem Beispiel beträgt Ihre finale <b>Auszahlung {{new_sum_round_l_1}}</b>. Ihr erwirtschaftetes <b>Einkommen war {{ r_income }}</b>.<br>
+Diese Auszahlung ergibt sich durch die nachfolgende Berechnungsmethode: </p>
+<br>
+<h3>Berechnung Ihrer Auszahlung</h3>
+<p>Es haben sich insgesamt  <u>
+{{new_num_low}}</u>
+  Teilnehmende für den Prozentsatz <u>
+{{low_percentage}}
+</u>
+  entschieden:<br>
+<div class="container">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>Ihr erwirtschaftetes <br>Einkommen</td>
+          <td>{{ r_income}}</td>
+        </tr>
+        <tr>
+          <td>Ihr Abzug durch <br>Prozentsatz {{low_percentage}} </td>
+          <td>{{ subtraction_l }}</td>
+        </tr>
+        <tr>
+          <td>Ihre direkte Vergütung <br>(nach Abzug)</td>
+          <td>{{new_r_income_sub_l_1}}</td>
+        </tr>
+        <tr>
+            
+            <td> Summe aller Abzüge =
+                {{new_sum_subtractions_l_1}}
+                &#247;
+                {{new_num_low}}
+                =
+                {{new_ind_share_substractions_l_1}}*
+
+            </td>
+            <td></td>
+          </tr>
+
+        <tr>
+            <td>Ihre indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+            <td>{{new_ind_share_substractions_l_1}}</td>
+        </tr>
+        <tr>
+            <td><b>Ihre finale Auszahlung <br> (Summe Vergütung)</b></td>
+            <td><b>{{new_sum_round_l_1}}</b></td>
+          </tr>
+      </tbody>
+    </table>
+    <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+  </div>    
+
+<h3 align="center">Beispiel 2</h3>
+<p>Ihr erwirtschaftetes Einkommen beträgt {{r_income}}:<br>
+
+</p>
+<p>Insgesamt {{new_num_low}} Teilnehmende haben {{low_percentage}} gewählt und {{new_num_high}} haben
+  {{high_percentage}} gewählt.</p>
+<p><b><i>Angenommen Sie haben den Prozentsatz <u>{{high_percentage}}.</u></i></b></p>
+<p> Sie sehen die folgende Übersicht zu den beiden Prozentsätzen und deren Anwendung:<br> <small><small>(Jeder
+    Teilnehmende erfährt die Anzahl der anderen Teilnehmenden, die den gleichen Prozentsatz gewählt
+    haben, nach seiner Entscheidung)</small></small></p>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">
+        <h3>Übersicht</h3>
+      </th>
+      <th scope="col">{{low_percentage}}</th>
+      <th scope="col">{{high_percentage}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Anzahl Teilnehmende</th>
+      <td>{{new_num_low}}</td>
+      <td>{{new_num_high}}</td>
+    </tr>
+        <tr>
+          <th scope="row">durchschnittliches Einkommen</th>
+          <td>{{new_average_income_l_1}}</td>
+          <td>{{new_average_income_h_1}}</td>
+        </tr>
+    <tr>
+      <th scope="row">Summe der Abzüge durch den Prozentsatz</th>
+      <td>{{new_sum_subtractions_l_1}}</td>
+      <td>{{new_sum_subtractions_h_1}}</td>
+    </tr>
+    <tr>
+      <th scope="row">individuelle Auszahlung durch die Anwendung des Prozentsatzes</th>
+      <td>{{new_ind_share_substractions_l_1}}</td>
+      <td>{{new_ind_share_substractions_h_1}}</td>
+    </tr>
+  </tbody>
+</table>
+<p> In diesem Beispiel beträgt Ihre finale <b>Auszahlung {{new_sum_round_h_1}}</b>. Ihr erwirtschaftetes <b>Einkommen war {{ r_income }}</b>.<br>
+  Diese Auszahlung ergibt sich durch die nachfolgende Berechnungsmethode: </p>
+<br>
+<h3>Berechnung Ihrer Auszahlung</h3>
+<p>Es haben sich insgesamt <u>
+    {{new_num_high}}</u>
+  Teilnehmende für den Prozentsatz <u>
+    {{high_percentage}}
+  </u>
+  entschieden:<br>
+<div class="container">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>Ihr erwirtschaftetes <br>Einkommen</td>
+        <td>{{ r_income}}</td>
+      </tr>
+      <tr>
+        <td>Ihr Abzug durch <br>Prozentsatz {{high_percentage}} </td>
+        <td>{{ subtraction_h }}</td>
+      </tr>
+      <tr>
+        <td>Ihre direkte Vergütung <br>(nach Abzug)</td>
+        <td>{{new_r_income_sub_h_1}}</td>
+      </tr>
+      <tr>
+
+        <td> Summe aller Abzüge =
+          {{new_sum_subtractions_h_1}}
+          &#247;
+          {{new_num_high}}
+          =
+          {{new_ind_share_substractions_h_1}}*
+
+        </td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>Ihre indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+        <td>{{new_ind_share_substractions_h_1}}</td>
+      </tr>
+      <tr>
+        <td><b>Ihre finale Auszahlung <br> (Summe Vergütung)</b></td>
+        <td><b>{{new_sum_round_h_1}}</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+</div>
+
+<h3 align="center">Beispiel 3</h3>
+<p>Ihr erwirtschaftetes Einkommen beträgt {{r_income}}:<br>
+
+</p>
+<p>Insgesamt {{new_num_low}} Teilnehmende haben {{low_percentage}} gewählt und {{new_num_high}} haben
+  {{high_percentage}} gewählt.</p>
+<p><b><i>Angenommen Sie haben den Prozentsatz <u>{{low_percentage}}.</u></i></b></p>
+<p> Sie sehen die folgende Übersicht zu den beiden Prozentsätzen und deren Anwendung:<br> <small><small>(Jeder
+      Teilnehmende erfährt die Anzahl der anderen Teilnehmenden, die den gleichen Prozentsatz
+      gewählt
+      haben, nach seiner Entscheidung)</small></small></p>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">
+        <h3>Übersicht</h3>
+      </th>
+      <th scope="col">{{low_percentage}}</th>
+      <th scope="col">{{high_percentage}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Anzahl Teilnehmende</th>
+      <td>{{new_num_low}}</td>
+      <td>{{new_num_high}}</td>
+    </tr>
+    <tr>
+      <th scope="row">durchschnittliches Einkommen</th>
+      <td>{{new_average_income_l_2}}</td>
+      <td>{{new_average_income_h_2}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Summe der Abzüge durch den Prozentsatz</th>
+      <td>{{new_sum_subtractions_l_2}}</td>
+      <td>{{new_sum_subtractions_h_2}}</td>
+    </tr>
+    <tr>
+      <th scope="row">individuelle Auszahlung durch die Anwendung des Prozentsatzes</th>
+      <td>{{new_ind_share_substractions_l_2}}</td>
+      <td>{{new_ind_share_substractions_h_2}}</td>
+    </tr>
+  </tbody>
+</table>
+<p> In diesem Beispiel beträgt Ihre finale <b>Auszahlung {{new_sum_round_l_2}}</b>. Ihr erwirtschaftetes <b>Einkommen war {{ r_income }}</b>.<br>
+  Diese Auszahlung ergibt sich durch die nachfolgende Berechnungsmethode: </p>
+<br>
+<h3>Berechnung Ihrer Auszahlung</h3>
+<p>Es haben sich insgesamt <u>
+    {{new_num_low}}</u>
+  Teilnehmende für den Prozentsatz <u>
+    {{low_percentage}}
+  </u>
+  entschieden:<br>
+<div class="container">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>Ihr erwirtschaftetes <br>Einkommen</td>
+        <td>{{ r_income}}</td>
+      </tr>
+      <tr>
+        <td>Ihr Abzug durch <br>Prozentsatz {{low_percentage}} </td>
+        <td>{{ subtraction_l }}</td>
+      </tr>
+      <tr>
+        <td>Ihre direkte Vergütung <br>(nach Abzug)</td>
+        <td>{{new_r_income_sub_l_2}}</td>
+      </tr>
+      <tr>
+
+        <td> Summe aller Abzüge =
+          {{new_sum_subtractions_l_2}}
+          &#247;
+          {{new_num_low}}
+          =
+          {{new_ind_share_substractions_l_2}}*
+
+        </td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>Ihre indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+        <td>{{new_ind_share_substractions_l_2}}</td>
+      </tr>
+      <tr>
+        <td><b>Ihre finale Auszahlung <br> (Summe Vergütung)</b></td>
+        <td><b>{{new_sum_round_l_2}}</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+</div>
+
+<h3 align="center">Beispiel 4</h3>
+<p>Ihr erwirtschaftetes Einkommen beträgt {{r_income}}:<br>
+
+</p>
+<p>Insgesamt {{new_num_low}} Teilnehmende haben {{low_percentage}} gewählt und {{new_num_high}} haben
+  {{high_percentage}} gewählt.</p>
+<p><b><i>Angenommen Sie haben den Prozentsatz <u>{{high_percentage}}.</u></i></b></p>
+<p> Sie sehen die folgende Übersicht zu den beiden Prozentsätzen und deren Anwendung:<br> <small><small>(Jeder
+      Teilnehmende erfährt die Anzahl der anderen Teilnehmenden, die den gleichen Prozentsatz gewählt
+      haben, nach seiner Entscheidung)</small></small></p>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">
+        <h3>Übersicht</h3>
+      </th>
+      <th scope="col">{{low_percentage}}</th>
+      <th scope="col">{{high_percentage}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Anzahl Teilnehmende</th>
+      <td>{{new_num_low}}</td>
+      <td>{{new_num_high}}</td>
+    </tr>
+    <tr>
+      <th scope="row">durchschnittliches Einkommen</th>
+      <td>{{new_average_income_l_2}}</td>
+      <td>{{new_average_income_h_2}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Summe der Abzüge durch den Prozentsatz</th>
+      <td>{{new_sum_subtractions_l_2}}</td>
+      <td>{{new_sum_subtractions_h_2}}</td>
+    </tr>
+    <tr>
+      <th scope="row">individuelle Auszahlung durch die Anwendung des Prozentsatzes</th>
+      <td>{{new_ind_share_substractions_l_2}}</td>
+      <td>{{new_ind_share_substractions_h_2}}</td>
+    </tr>
+  </tbody>
+</table>
+<p> In diesem Beispiel beträgt Ihre finale <b>Auszahlung {{new_sum_round_h_2}}</b>. Ihr erwirtschaftetes <b>Einkommen war {{ r_income }}</b>.<br>
+  Diese Auszahlung ergibt sich durch die nachfolgende Berechnungsmethode: </p>
+<br>
+<h3>Berechnung Ihrer Auszahlung</h3>
+<p>Es haben sich insgesamt <u>
+    {{new_num_high}}</u>
+  Teilnehmende für den Prozentsatz <u>
+    {{high_percentage}}
+  </u>
+  entschieden:<br>
+<div class="container">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>Ihr erwirtschaftetes <br>Einkommen</td>
+        <td>{{ r_income}}</td>
+      </tr>
+      <tr>
+        <td>Ihr Abzug durch <br>Prozentsatz {{high_percentage}} </td>
+        <td>{{ subtraction_h }}</td>
+      </tr>
+      <tr>
+        <td>Ihre direkte Vergütung <br>(nach Abzug)</td>
+        <td>{{new_r_income_sub_h_2}}</td>
+      </tr>
+      <tr>
+
+        <td> Summe aller Abzüge =
+          {{new_sum_subtractions_h_2}}
+          &#247;
+          {{new_num_high}}
+          =
+          {{new_ind_share_substractions_h_2}}*
+
+        </td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>Ihre indirekte Vergütung <br>(Auszahlung Abzüge <br> zu gleichen Teilen)</td>
+        <td>{{new_ind_share_substractions_h_2}}</td>
+      </tr>
+      <tr>
+        <td><b>Ihre finale Auszahlung <br> (Summe Vergütung)</b></td>
+        <td><b>{{new_sum_round_h_2}}</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><small><small>*Punkte werden in Ihrem Sinne aufgerundet</small></small></p>
+</div>

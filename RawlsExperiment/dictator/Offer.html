@@ -1,0 +1,18 @@
+{{ block title }}Ihre Entscheidung{{ endblock }}
+{{ block content }}
+<p>
+    Bitte entscheiden Sie, wie viel der {{ C.ENDOWMENT }}
+    Sie für sich <b>behalten</b> würden.<br>
+    Der Zufall entscheidet anschließend, ob Ihre Entscheidung ausgewählt wird.
+</p>
+
+{{ formfields }}
+
+{{ next_button }}
+<p><br>
+    <br>
+</p>
+<p>Wiederholung der Instruktionen:</p>
+{{ include C.INSTRUCTIONS_TEMPLATE }}
+
+{{ endblock }}

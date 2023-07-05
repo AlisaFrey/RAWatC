@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Auszahlungsformular
+{% endblock %}
+
+{% block content %}
+    <p>Willkommen beim Auszahlungsformular des Kölner Laboratoriums für Wirtschaftsforschung.</p>
+    
+    <p>Die Verwendung dieses Formulars stellt sicher, dass Ihre Verhaltensdaten nicht mit Ihren Auszahlungsdaten verknüpft werden können.</p>
+    
+    <p>Ihr Auszahlungsbetrag beträgt <b>{{ nicePayment }} €</b>. Damit wir die Auszahlung vornehmen können, geben Sie bitte hier Ihre Auszahlungsdaten ein.</p>
+
+    {% formfield player.email label="Ihre E-Mail-Adresse auf PayPal" %}
+
+    <script type="text/javascript">
+	    document.getElementsByName("email")[0].value = "";
+    </script>
+    
+    <p>Mit dem Absenden dieses Formulars stimmen Sie den <a href="https://www.lab.uni-koeln.de/public/privacy.php" target="_new">Datenschutzbestimmungen des Kölner Laboratoriums für Wirtschaftsforschung</a> zu. Darüber hinaus erklären Sie sich damit einverstanden, dass Ihre Zahlungsdaten für die Zwecke der Zahlung verarbeitet werden dürfen. In diesem Rahmen übermitteln wir an PayPal Ihren Auszahlungsbetrag und Ihre E-Mail-Adresse. Die Datenschutzbestimmungen von PayPal finden Sie <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full" target="_new">hier</a>. Ihre Verhaltensdaten werden nicht mit Ihren Auszahlungsdaten verknüpft.</p>
+
+    {% next_button %}
+
+{% endblock %}

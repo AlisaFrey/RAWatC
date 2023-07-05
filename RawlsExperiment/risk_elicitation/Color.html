@@ -1,0 +1,32 @@
+{{ block title }}
+    Farbwahl
+{{ endblock }}
+{{ block content }}
+<!-- <p>Sie können nun noch mehr Punkte verdienen, die Ihnen anschließend, zusätzlich zur Auszahlung des eigentlichen Experiments, ausbezahlt werden.</p>
+<p> Sie erhalten von uns nun zusätzlich {{C.ENDOWMENT}}. </p>
+<p>Sie bekommen darüber hinaus die Möglichkeit Punkte zu investieren (von diesen {{C.ENDOWMENT}}n).</p>
+<p>
+Die Investition ist zu 50% erfolgreich. </p>-->
+<p>Der Erfolg der Investition hängt von Ihrer Farbwahl ab. Es stehen zwei Farben zur Auswahl.<br> Die Investition ist zu 50% erfolgreich.
+    <p>Hinter einer der beiden Farben steckt:</p>
+    <li><b>Ihr Investment ist erfolgreich.</b> Der von Ihnen investierte <b>Betrag wird mit {{C.FACTOR}} multipliziert</b>, Ihnen ausbezahlt und zum von Ihnen nicht investierten Betrag aufaddiert.</li><br>
+    Hinter der anderen Farbe steckt:
+    <li><b>Ihr Investment ist nicht erfolgreich.</b> Aus der Investition wird Ihnen <b>nichts ausbezahlt</b>.
+    Ihre Auszahlung entspricht dem nicht investierten Betrag.</li></p>
+    <p>Welche Farbe wofür steht, wurde bereits <u>zufällig</u> bestimmt.</p>
+
+    
+<p>Bitte wählen Sie eine Farbe:</p>
+<button class="btn btn-primary" name="color" value="True">Blau</button>
+<button class="btn btn-success" name="color" value="False">Grün</button>
+<!--<button type="button" class="btn btn-primary" name="offer_accepted" value="True" >Blau</button>
+<button name="offer_accepted" value="False" type="button" class="btn btn-success" >Grün</button>-->
+<br>
+{{ formfield_errors 'color' }}
+<p></p>
+<!--<p><small><small>(Durch klicken auf eine Farbe gelangen Sie weiter)</small></small> </p>-->
+
+
+
+
+{{ endblock }}

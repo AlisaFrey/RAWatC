@@ -1,0 +1,25 @@
+{{ block title }}
+    Feedback
+{{ endblock }}
+{{ block content }}
+
+
+
+<p> 
+Politische Meinungen werden oftmals in einem politischen Spektrum in 'links und' 'rechts' unterteilt.
+</p>
+<p>Bitte geben Sie mit Hilfe des abgebildeten Skala an, wo auf diesem Spektrum Sie sich selbst einordnen würden.</p>
+<p></p>
+<p align="center">
+    <i>‘links’</i> &nbsp;
+    {{ for choice in form.question_0 }}
+    {{ choice }}
+    {{ endfor }}
+    &nbsp; <i>‘rechts’</i>
+</p>
+
+<p></p>
+<p></p>
+    {{ next_button }}
+
+{{ endblock }}

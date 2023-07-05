@@ -1,0 +1,25 @@
+
+{{ block title }}
+    <button type="button" class="btn btn-outline-dark">
+      <font size="2"> <i>Runde {{ subsession.round_number }} von {{ Constants.num_rounds}} </i></font>
+    </button>
+   <h1>
+    Entscheidung 
+</h1>
+{{ endblock }}
+
+{{ block content }}
+
+    {{ formfields}}
+    
+  <p>{{if Constants.treatment == 'TAX_RANDOM'}}
+        Der Prozentsatz ist
+        <b>
+        {{if player.decision == 0}} {{low_percentage}} {{endif}}
+        {{if player.decision == 1}} {{high_percentage}} {{endif}}
+        </b>
+    {{endif}}
+</p>
+  <!--<p>{{if player.round_number > 1}} <small>(Nachdem Sie "Weiter" gedrückt haben, starten sofort die Encryptio){{endif}}</small></p>  -->
+{{ next_button }}
+{{ endblock }}

@@ -1,0 +1,18 @@
+{{ block title }}
+    Feedback
+{{ endblock }}
+{{ block content }}
+<p>Bitte geben Sie mit Hilfe der abgebildeten Skala an, inwiefern Sie der folgenden Aussage zustimmen:</p>
+<p></p>
+<p align="center"><b>Ich habe in jeder Runde versucht so viel Einkommen wie möglich zu erwirtschaften.</b></p>
+<p></p>
+<p align="center">
+    <i>stimme überhaupt nicht zu</i> &nbsp;
+    {{ for choice in form.question_1 }}
+    {{ choice }}
+    {{ endfor }}
+    &nbsp; <i>stimme vollkommen zu</i>
+</p>
+    {{ next_button }}
+
+{{ endblock }}

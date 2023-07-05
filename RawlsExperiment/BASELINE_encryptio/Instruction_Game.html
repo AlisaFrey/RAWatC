@@ -1,0 +1,22 @@
+{{ block title }}
+Encryptio
+{{ endblock }}
+
+{{ block content }}
+<p>Bitte Lesen Sie die nachfolgenden Instruktionen aufmerksam durch.
+    Bei Fragen jeglicher Art, können Sie sich gerne an die ExperimentatorInnen wenden.</p>
+{{ if Constants.treatment == 'BASE'}}
+    {{ include Constants.B_instructions_template_game }}<br>
+{{ endif}}
+{{ if Constants.treatment == 'TAX_RANDOM'}}
+{{ include Constants.TR_instructions_template_game }}<br>
+{{ endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+{{ include Constants.IR_instructions_template_game }}<br>
+{{ endif}}
+<p></p>
+
+    {{ next_button }}
+{{ endblock }}
+
+

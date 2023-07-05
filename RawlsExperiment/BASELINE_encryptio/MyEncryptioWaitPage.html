@@ -1,0 +1,19 @@
+{{ extends 'otree/WaitPage.html' }}
+{{ block title }}{{ title_text }}{{ endblock }}
+{{ block content }}
+<meta http-equiv="refresh" content="5">
+{{ body_text }}
+<p>Solange Sie warten müssen, können Sie nochmals eine
+    <b>Wiederholung der Instruktionen für die Encryptio</b> nachlesen:</p>
+
+{{ if Constants.treatment == 'BASE'}}
+{{ include Constants.B_instructions_template_game_short }}<br>
+{{ endif}}
+{{ if Constants.treatment == 'TAX_RANDOM'}}
+{{ include Constants.TR_instructions_template_game_short }}<br>
+{{ endif}}
+{{ if Constants.treatment == 'INCOME_RANDOM'}}
+{{ include Constants.IR_instructions_template_game_short }}<br>
+{{ endif}}
+
+{{ endblock }}

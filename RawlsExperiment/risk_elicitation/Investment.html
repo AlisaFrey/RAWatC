@@ -1,0 +1,34 @@
+{{ block title }}
+    Entscheidung
+{{ endblock }}
+{{ block content }}
+<p>
+Sie erhalten von uns nun zusätzlich {{C.ENDOWMENT}}. </p>
+<p>Sie bekommen darüber hinaus die Möglichkeit Punkte zu investieren (von diesen {{C.ENDOWMENT}}n).</p>
+<p>
+Die Investition ist zu 50% erfolgreich. Sie können bis zu {{C.ENDOWMENT}} investieren.  </p>
+    
+
+<p>Der Erfolg der Investition hängt von Ihrer Farbwahl ab. Diese treffen Sie auf der nächsten Seite. Es stehen zwei Farben zur Auswahl.
+<p>Hinter einer der beiden Farben steckt:</p>
+<li><b>Ihr Investment ist erfolgreich.</b> Der von Ihnen investierte <b>Betrag wird mit {{C.FACTOR}} multipliziert</b>, Ihnen ausbezahlt und zum von Ihnen nicht investierten Betrag aufaddiert.</li><br>
+Hinter der anderen Farbe steckt:
+<li><b>Ihr Investment ist nicht erfolgreich.</b> Aus der Investition wird Ihnen <b>nichts ausbezahlt</b>.
+Ihre Auszahlung entspricht dem nicht investierten Betrag.</li></p>
+<p>Welche Farbe wofür steht, wurde bereits zufällig bestimmt.</p>
+<p><b>Wie viel der {{C.ENDOWMENT}} möchten Sie investieren?</b></p>
+    <p >
+{{ formfield 'investment' label="Ihr Investment:"}}
+</p>
+ <!--   
+<p>Bitte wählen Sie eine Farbe:</p>
+<button type="button" class="btn btn-primary" name="offer_accepted" value="True" >Blau</button>
+<button name="offer_accepted" value="False" type="button" class="btn btn-success" >Grün</button>
+<br>
+<p></p>
+<p><small><small>(Durch klicken auf eine Farbe gelangen Sie weiter)</small></small> </p>-->
+{{ next_button }}
+
+
+
+{{ endblock }}

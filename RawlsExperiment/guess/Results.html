@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Ergebnis
+{% endblock %}
+{% block content %}
+<ul>
+    <li>Die abgegebenen Zahlen waren: {{ guesses }}</li>
+    <li>Ihre Zahl war: {{ player.guess }} </li>
+    <li> Der Durchschnitt ist: {{ group.rounded_average_guess }} </li>
+    <li> 2/3 des Durchschnitts: {{ group.rounded_two_thirds }} </li>
+</ul>
+
+</li>
+
+{% if player.is_winner %}
+Ihre Schätzung war die beste.<br>
+{% if group.more_than_one > 1 %} Bei mehreren gleich guten Schätzungen, wurde die GewinnerIn gelost. {% endif %}<br>
+Sie haben daher {{ player.payoff }} gewonnen.
+{% else %}
+Sie haben nicht gewonnen.
+{% endif %}
+
+</br>
+Ihre Auszahlung beträgt {{ player.payoff | c }}.
+
+{% next_button %}
+
+{% endblock %}
