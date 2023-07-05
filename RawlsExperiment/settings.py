@@ -9,7 +9,7 @@ SESSION_CONFIGS = [
         num_demo_participants=16,
         expShortName="RAWatC",
         expId=9,
-        sessId=69,
+        sessId=1,
         app_sequence=["BASELINE_encryptio", #"risk_elicitation",  "guess",
                       #"dictator", "confi", "altruism_elicitation",
                        "after_survey", "AnonPay"],
@@ -62,7 +62,7 @@ SESSION_CONFIGS = [
 
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.01, participation_fee=6.00, doc=""
+    real_world_currency_per_point=0.01, participation_fee=5.00, doc=""
 )
 
 PARTICIPANT_FIELDS = ['decision','is_dropout','num_correct', 'fake_num_correct','income']
