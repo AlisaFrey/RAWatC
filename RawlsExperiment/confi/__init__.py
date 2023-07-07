@@ -166,7 +166,7 @@ class Weiter(Page):
 
         player.payoff = (accuracy + player.crt_performance +
                          player.correct_relative_performance) * C.Prize_correct
-        player.participant.vars['payment'] = participant.payoff_plus_participation_fee()
+        player.participant.vars['payment'] = player.participant.payoff_plus_participation_fee()
 
 class Confi(Page):
     form_model = 'player'
