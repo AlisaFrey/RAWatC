@@ -69,10 +69,10 @@ PARTICIPANT_FIELDS = ['decision','is_dropout','num_correct', 'fake_num_correct',
 SESSION_FIELDS = ['params','players_per_group']
 
 ROOMS = [
-    dict(
-        name='dice_lab',
-        display_name ='DICE Lab',
-        #participant_label_file='C:/otree/dicelab_otree_labels.txt'
+        dict(
+        name='CLER',
+        display_name ='CLER',
+        participant_label_file='_rooms/labels.txt'
     )
 ]
 
