@@ -14,10 +14,10 @@ Redristribution and Voting by Feet using a RET.
 Real-effort tasks. The different tasks are available in task_matrix.py, task_transcription.py, etc.
 You can delete the ones you don't need.
 
-THIS CONTAINS THE VALUES FROM THE 5. BASELINE SESSION*.
+THIS CONTAINS THE VALUES FROM THE 6. BASELINE SESSION*.
 
 FOR CLER
-SESSION 13.07.2023 ('TAX_RANDOM 5', 'INCOME_RANDOM 5')
+SESSION 13.07.2023 ('TAX_RANDOM 6', 'INCOME_RANDOM 6')
 """
 
 
@@ -114,8 +114,8 @@ def creating_session(subsession: Subsession):
             # SHUFFLING TAX RATES/DECISION for different rounds (TAX_RANDOM):
             # THE BELOW INSERTED VALUES WERE CREATED IN BASELINE SESSION 5
             if subsession.round_number == 1:
-                LOW1 = [1,2,3,5,6,7,8,9,10,11,14,15,16]
-                HIGH1 = [4,12,13]
+                LOW1 = [1,2,4,5,6,10,12,14,15]
+                HIGH1 = [3,7,8,9,11,13,16]
                 print('shuffling round 1')
                 print(' LOW = ', LOW1)
                 print(' HIGH = ', HIGH1)
@@ -124,8 +124,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH1:  # HIGH
                     player.decision = 1
             if subsession.round_number == 2:
-                LOW2 = [1,3,5,12,13,14,15,16]
-                HIGH2 = [2,4,6,7,8,9,10,11]
+                LOW2 = [7,8,11,14,15]
+                HIGH2 = [1,2,3,4,5,6,9,10,12,13,16]
                 print('shuffling round 2')
                 print(' LOW = ', LOW2)
                 print(' HIGH = ', HIGH2)
@@ -134,8 +134,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH2:  # HIGH
                     player.decision = 1
             if subsession.round_number == 3:
-                LOW3 = [1,2,3,5,6,8,11,12,13,14,15]
-                HIGH3 = [4,7,9,10,16]
+                LOW3 = [2,3,6,7,11,14]
+                HIGH3 = [1,4,5,8,9,10,12,13,15,16]
                 print('shuffling round 3')
                 print(' LOW = ', LOW3)
                 print(' HIGH = ', HIGH3)
@@ -144,8 +144,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH3:  # HIGH
                     player.decision = 1
             if subsession.round_number == 4:
-                LOW4 = [1,2,3,5,6,8,9,10,12,13,14,15]
-                HIGH4 = [4,7,11,16]
+                LOW4 = [2,3,4,9,15]
+                HIGH4 = [1,5,6,7,8,10,11,12,13,14,16]
                 print('shuffling round 4')
                 print(' LOW = ', LOW4)
                 print(' HIGH = ', HIGH4)
@@ -154,8 +154,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH4:  # HIGH
                     player.decision = 1
             if subsession.round_number == 5:
-                LOW5 = [1,3,5,6,8,9,11,13,14,15,16]
-                HIGH5 = [2,4,7,10,12]
+                LOW5 = [1,5,6,7,9,13,15]
+                HIGH5 = [2,3,4,8,10,11,12,14,16]
                 print('shuffling round 5')
                 print(' LOW = ', LOW5)
                 print(' HIGH = ', HIGH5)
@@ -164,8 +164,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH5:  # HIGH
                     player.decision = 1
             if subsession.round_number == 6:
-                LOW6 = [2,3,5,6,8,11,12,14,15]
-                HIGH6 = [1,4,7,9,10,13,16]
+                LOW6 = [2,3,4,5,6,7,9,13,15]
+                HIGH6 = [1,8,10,11,12,14,16]
                 print('shuffling round 6')
                 print(' LOW = ', LOW6)
                 print(' HIGH = ', HIGH6)
@@ -181,7 +181,7 @@ def creating_session(subsession: Subsession):
             # SHUFFLING CORRECT PUZZLES for different rounds (INCOME_RANDOM treatment):
         # THE BELOW INSERTED VALUES WERE CREATED IN BASELINE SESSION 2
             if subsession.round_number == 1:
-                puzzles_correct = [15,16,16,12,16,17,11,14,12,9,17,17,16,20,17,15
+                puzzles_correct = [12,12,14,9,15,15,15,9,14,13,10,11,18,0,14,16
                                    ]
                 random.shuffle(puzzles_correct) # shuffles the list
                 print('puzzles round 1')
@@ -191,7 +191,7 @@ def creating_session(subsession: Subsession):
                     #random.choice(puzzles_correct) chooses for each player from the whole list 
 
             elif subsession.round_number == 2:
-                puzzles_correct = [17,17,14,14,17,20,13,17,14,10,15,20,18,18,19,16
+                puzzles_correct = [14,16,17,14,16,16,16,9,16,15,10,13,17,4,16,17
                                    ]
                 random.shuffle(puzzles_correct)
                 print('puzzles round 2')
@@ -199,7 +199,7 @@ def creating_session(subsession: Subsession):
                     player.num_correct = puzzles_correct.pop()
 
             elif subsession.round_number == 3:
-                puzzles_correct = [18,16,16,14,17,19,13,19,12,12,16,21,18,19,18,16
+                puzzles_correct = [12,16,18,14,17,17,16,5,16,17,11,13,18,8,15,18
                                    ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 3')
@@ -207,7 +207,7 @@ def creating_session(subsession: Subsession):
                     player.num_correct = puzzles_correct.pop()
                 
             elif subsession.round_number == 4:
-                puzzles_correct = [17,17,15,15,16,21,12,19,14,11,19,22,19,18,20,15
+                puzzles_correct = [14,17,18,14,17,17,18,8,16,16,10,13,18,9,17,17
                                    ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 4')
@@ -215,7 +215,7 @@ def creating_session(subsession: Subsession):
                     player.num_correct = puzzles_correct.pop()
 
             elif subsession.round_number == 5:
-                puzzles_correct = [16,18,16,14,19,22,13,19,15,14,18,23,19,20,17,18
+                puzzles_correct = [14,18,15,14,19,16,18,11,17,15,9,14,19,9,16,19
                                    ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 5')
@@ -223,7 +223,7 @@ def creating_session(subsession: Subsession):
                     player.num_correct = puzzles_correct.pop()
                 
             elif subsession.round_number == 6:
-                puzzles_correct = [18,18,16,14,18,20,13,20,15,14,19,22,18,20,20,15
+                puzzles_correct = [14,15,18,14,18,18,17,8,17,17,14,14,18,10,16,18
                                    ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 6')
